@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Starry-Night-Website-Banner</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="scene">
+		<div class="moon"></div>
+		<img class="forest" src="forest.png">
+		<img class="cloud1" src="cloud1.png">
+		<img class="cloud2" src="cloud2.png">
+		<img class="cloud3" src="cloud3.png">
+		<img class="cloud4" src="cloud1.png">
+		<img class="cloud5" src="cloud2.png">
+		<img class="cloud6" src="cloud3.png">
+	</div>
+	<script type="text/javascript">
+		function stars(){
+			let count = 500;
+			let scene = document.querySelector('.scene');
+			let i = 0;
+			while(i < count){
+				let star = document.createElement("i");
+				let x = Math.floor(Math.random() * window.innerWidth);
+				let y = Math.floor(Math.random() * window.innerheihgt);
+				let duration = Math.random() * 10;
+				let size = Math.random() * 2;
+
+				star.style.left = x+'px';
+				star.style.top = y+'px';
+				star.style.width = 1+size+'px';
+				star.style.height = 1+size+'px';
+
+				star.style.animationDuration = 6+duration+'s';
+				star.style.animationDealy = duration+'s';
+
+				scene.appendChild(star)
+				i++
+			}
+		}
+		stars()
+	</script>
+</body>
+</html>
